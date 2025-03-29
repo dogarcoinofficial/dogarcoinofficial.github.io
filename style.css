@@ -48,10 +48,10 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* Hero section - Updated to Gold & Blue */
+/* Hero (Cover) Section - Fixed to Gold & Blue */
 .hero {
     padding: 100px 20px;
-    background: linear-gradient(135deg, #c9a227, #0056b3); /* Gold to Blue */
+    background: linear-gradient(135deg, #0056b3, #c9a227); /* Blue to Gold */
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -117,12 +117,13 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Community Section */
+/* Community Section - Fixed to Gold & Blue */
 #community {
     background: linear-gradient(135deg, #0056b3, #c9a227); /* Blue to Gold */
     color: white;
     padding: 50px 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Live Price Section */
