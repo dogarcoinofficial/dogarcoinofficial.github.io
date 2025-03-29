@@ -54,11 +54,12 @@ nav ul li a {
     background: linear-gradient(135deg, #c9a227, #0056b3); /* Gold to Blue */
     color: white;
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero h2 {
     font-size: 36px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Button styling */
@@ -71,28 +72,33 @@ nav ul li a {
     text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .btn:hover {
     background: #b8921a; /* Slightly darker gold */
+    transform: scale(1.05);
 }
 
 /* Section styling */
 section {
     padding: 50px 20px;
     max-width: 800px;
-    margin: auto;
+    margin: 20px auto;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Roadmap section */
 #roadmap {
-    background: white;
+    background: #ffffff;
     padding: 50px 20px;
     border-radius: 10px;
+}
+
+#roadmap h2 {
+    color: #0056b3;
 }
 
 #roadmap ul {
@@ -108,6 +114,7 @@ section {
     margin: 10px 0;
     border-radius: 5px;
     font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Community Section */
@@ -131,6 +138,7 @@ footer {
     padding: 20px;
     margin-top: 20px;
     color: white;
+    text-align: center;
 }
 
 /* Logo */
@@ -142,4 +150,22 @@ footer {
 .logo-container img {
     width: 200px;
     height: auto;
+}
+
+/* Whitepaper Section */
+#whitepaper {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#whitepaper h2 {
+    color: #0056b3;
+}
+
+#whitepaper .btn {
+    background: #c9a227;
+    color: white;
+    font-weight: bold;
 }
