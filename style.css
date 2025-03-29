@@ -1,83 +1,135 @@
-/* Updated CSS for a lighter theme matching the Dogar Coin logo */
-body {
-    font-family: Arial, sans-serif;
+/* Reset default styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-header {
-    background-color: #004aad; /* Matching logo color */
-    color: white;
-    padding: 20px;
+/* Light background and text color */
+body {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text for readability */
     text-align: center;
+}
+
+/* Header styling */
+header {
+    background: #0056b3; /* Blue header */
+    padding: 20px;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav h1 {
+    font-size: 24px;
+    color: white;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
 }
 
 nav ul li a {
-    text-decoration: none;
     color: white;
-    font-weight: bold;
+    text-decoration: none;
+    font-size: 18px;
 }
 
+/* Hero section */
 .hero {
-    text-align: center;
-    padding: 50px;
-    background-color: #e0e7ff; /* Soft blue matching logo */
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #0073e6, #0056b3); /* Blue gradient */
+    color: white;
 }
 
+.hero h2 {
+    font-size: 36px;
+}
+
+/* Button styling */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #004aad; /* Matching logo */
+    padding: 12px 24px;
+    margin-top: 20px;
+    background: #0056b3; /* Blue */
     color: white;
     text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #004494; /* Darker blue */
+}
+
+/* Section styling */
+section {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Roadmap section */
+#roadmap {
+    background: white;
+    padding: 50px 20px;
+    border-radius: 10px;
+}
+
+#roadmap ul {
+    list-style: none;
+    text-align: left;
+    padding: 20px;
+}
+
+#roadmap ul li {
+    background: #e6f2ff; /* Light blue background */
+    color: #0056b3; /* Dark blue text */
+    padding: 15px;
+    margin: 10px 0;
     border-radius: 5px;
     font-weight: bold;
 }
 
-section {
-    padding: 40px;
-    text-align: center;
-    background-color: white;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
+/* Live Price Section */
+#live-price span {
+    font-weight: bold;
+    color: #0056b3; /* Blue */
+    font-size: 24px;
 }
 
-#roadmap {
-    background-color: #cce5ff; /* Light blue for readability */
-    color: #003366;
-    padding: 40px;
-}
-
+/* Footer */
 footer {
-    text-align: center;
+    background: #0056b3;
     padding: 20px;
-    background-color: #004aad;
+    margin-top: 20px;
     color: white;
 }
 
-#whitepaper {
-    background-color: #e0e7ff;
-    padding: 40px;
+/* Logo */
+.logo-container {
+    text-align: center;
+    margin-top: 20px;
 }
 
-#whitepaper a {
-    color: white;
-    background-color: #004aad;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
+.logo-container img {
+    width: 200px;
+    height: auto;
 }
