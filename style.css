@@ -100,3 +100,12 @@ footer {
     padding: 20px;
     margin-top: 20px;
 }
+.logo-container {
+    text-align: center;  /* This centers the logo horizontally */
+    margin-top: 20px;  /* Adds some space above the logo */
+}
+
+.logo-container img {
+    width: 200px;  /* This resizes the logo. You can change the value if it's too big or small */
+    height: auto;  /* Ensures the logo keeps its aspect ratio */
+}
