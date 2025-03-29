@@ -27,6 +27,7 @@ nav {
 
 nav h1 {
     font-size: 24px;
+    color: #ffcc00;
 }
 
 nav ul {
@@ -51,6 +52,7 @@ nav ul li a {
 
 .hero h2 {
     font-size: 32px;
+    color: #ffcc00;
 }
 
 .btn {
@@ -74,4 +76,6 @@ footer {
     background: #1e1e1e;
     padding: 20px;
     margin-top: 20px;
+    font-size: 14px;
+    color: #ffcc00;
 }
