@@ -7,22 +7,41 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
             color: #333;
             margin: 0;
             padding: 0;
             text-align: center;
         }
         header {
-            background: linear-gradient(to right, #FFD700, #1E90FF);
+            background: linear-gradient(135deg, #D4AF37 0%, #1A2A6C 100%);
             color: white;
             padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .logo-container {
+            margin: 0 auto;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            border: 3px solid #D4AF37;
+        }
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            padding: 10px;
         }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 20px 0 0;
         }
         nav ul li {
             display: inline;
@@ -32,40 +51,118 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
         }
         .hero {
-            background: linear-gradient(to right, #FFD700, #1E90FF);
+            background: linear-gradient(135deg, #D4AF37 0%, #1A2A6C 100%);
             color: white;
-            padding: 50px 20px;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: shine 6s infinite linear;
+        }
+        @keyframes shine {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         .btn {
-            background-color: #1E90FF;
+            background-color: #1A2A6C;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 30px;
             text-decoration: none;
             font-size: 18px;
-            border-radius: 5px;
+            border-radius: 50px;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            border: 2px solid #D4AF37;
+            position: relative;
+            overflow: hidden;
+            font-weight: bold;
         }
         .btn:hover {
-            background-color: #187bcd;
+            background-color: #D4AF37;
+            color: #1A2A6C;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         section {
-            padding: 50px 20px;
+            padding: 70px 20px;
+            background-color: white;
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        section:nth-child(even) {
+            background-color: #f8f9fa;
         }
         footer {
-            background: #222;
+            background: #1A2A6C;
             color: white;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2.8em;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        h2 {
+            font-size: 2.2em;
+            color: #1A2A6C;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #D4AF37;
+        }
+        #whitepaper .btn {
+            background-color: #D4AF37;
+            color: #1A2A6C;
+            border: 2px solid #1A2A6C;
+        }
+        #whitepaper .btn:hover {
+            background-color: #1A2A6C;
+            color: white;
+        }
+        .roadmap-item {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 15px;
+            border-left: 4px solid #D4AF37;
+            background-color: #f8f9fa;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="DogarCoin.png" alt="Dogar Coin Logo" width="100">
+            <img src="dogarcoin.png" alt="Dogar Coin Logo">
         </div>
         <nav>
             <h1>Dogar Coin (DGC)</h1>
@@ -87,38 +184,48 @@
 
     <section id="about">
         <h2>About Dogar Coin</h2>
-        <p>Dogar Coin is a cryptocurrency designed to benefit the community and its holders. Our mission is to create a decentralized, sustainable economy.</p>
+        <p>Dogar Coin is a revolutionary cryptocurrency designed to benefit the community and its holders. Our mission is to create a decentralized, sustainable economy that empowers individuals worldwide through blockchain technology.</p>
     </section>
 
     <section id="tokenomics">
         <h2>Tokenomics</h2>
-        <p>Total Supply: 200 Billion DGC</p>
-        <p>Rewards System: Community-focused with staking rewards.</p>
+        <div class="roadmap-item">
+            <p><strong>Total Supply:</strong> 200 Billion DGC</p>
+            <p><strong>Rewards System:</strong> Community-focused with generous staking rewards.</p>
+            <p><strong>Distribution:</strong> Fair launch with transparent allocation.</p>
+        </div>
     </section>
 
     <section id="roadmap">
         <h2>Roadmap</h2>
-        <ul>
-            <li>✅ Q1 2025 - Coin Launch</li>
-            <li>🔄 Q2 2025 - Exchange Listings</li>
-            <li>🔄 Q3 2025 - Staking Feature</li>
-            <li>🔄 Q4 2025 - Community Growth & Partnerships</li>
-        </ul>
+        <div class="roadmap-item">
+            <p>✅ <strong>Q1 2025</strong> - Official Coin Launch</p>
+        </div>
+        <div class="roadmap-item">
+            <p>🔄 <strong>Q2 2025</strong> - Major Exchange Listings</p>
+        </div>
+        <div class="roadmap-item">
+            <p>🔄 <strong>Q3 2025</strong> - Staking Feature Implementation</p>
+        </div>
+        <div class="roadmap-item">
+            <p>🔄 <strong>Q4 2025</strong> - Global Community Growth & Strategic Partnerships</p>
+        </div>
     </section>
 
     <section id="live-price">
         <h2>Live Price</h2>
-        <p>Current Price: <span>$0.00</span></p>
+        <p>Current Price: <span style="font-size: 1.5em; color: #D4AF37; font-weight: bold;">$0.00</span></p>
     </section>
 
     <section id="whitepaper">
         <h2>Dogar Coin Whitepaper</h2>
         <p>Dogar Coin (DGC) is a community-driven cryptocurrency designed to empower individuals and foster decentralized financial systems. Read our full whitepaper to learn more about our mission, tokenomics, governance, technology, and roadmap.</p>
-        <a href="https://github.com/dogarcoinofficial/dogarcoinofficial.github.io/raw/main/Dogar%20Coin%20Whitepaper%20.pdf" class="btn" download>Download Whitepaper</a>
+        <a href="Dogar Coin Whitepaper .pdf" class="btn" download>Download Whitepaper</a>
     </section>
 
     <footer>
-        <p>Join the community: <a href="https://twitter.com/dogarcoin" style="color: #FFD700;">Follow us on Twitter</a></p>
+        <p>Join our growing community: <a href="https://twitter.com/dogarcoin" style="color: #D4AF37; font-weight: bold; text-decoration: none;">Follow us on Twitter</a></p>
+        <p>&copy; 2025 Dogar Coin. All rights reserved.</p>
     </footer>
 </body>
 </html>
