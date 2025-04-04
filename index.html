@@ -14,16 +14,23 @@
     <meta name="theme-color" content="#ffffff">
     
     <style>
+        :root {
+            --primary-blue: #1A2A6C;
+            --secondary-blue: #3A6EA5;
+            --light-blue: #E6F0FA;
+            --gold: #D4AF37;
+            --dark-gold: #B7950B;
+        }
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
+            background-color: var(--light-blue);
             color: #333;
             margin: 0;
             padding: 0;
             text-align: center;
         }
         header {
-            background: linear-gradient(135deg, #D4AF37 0%, #1A2A6C 100%);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--primary-blue) 100%);
             color: white;
             padding: 20px;
             text-align: center;
@@ -39,7 +46,7 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            border: 3px solid #D4AF37;
+            border: 3px solid var(--gold);
         }
         .logo-container img {
             max-width: 100%;
@@ -68,7 +75,7 @@
             background-color: rgba(255,255,255,0.2);
         }
         .hero {
-            background: linear-gradient(135deg, #D4AF37 0%, #1A2A6C 100%);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--primary-blue) 100%);
             color: white;
             padding: 80px 20px;
             position: relative;
@@ -89,7 +96,7 @@
             to { transform: rotate(360deg); }
         }
         .btn {
-            background-color: #1A2A6C;
+            background-color: var(--primary-blue);
             color: white;
             padding: 12px 30px;
             text-decoration: none;
@@ -98,30 +105,31 @@
             display: inline-block;
             margin-top: 30px;
             transition: all 0.3s ease;
-            border: 2px solid #D4AF37;
+            border: 2px solid var(--gold);
             position: relative;
             overflow: hidden;
             font-weight: bold;
         }
         .btn:hover {
-            background-color: #D4AF37;
-            color: #1A2A6C;
+            background-color: var(--gold);
+            color: var(--primary-blue);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         section {
             padding: 70px 20px;
-            background-color: white;
+            background: white;
             margin: 20px auto;
             max-width: 1200px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--gold);
         }
         section:nth-child(even) {
-            background-color: #f8f9fa;
+            background: linear-gradient(to bottom, #FFFFFF 0%, var(--light-blue) 100%);
         }
         footer {
-            background: #1A2A6C;
+            background: var(--primary-blue);
             color: white;
             padding: 30px 20px;
             margin-top: 50px;
@@ -133,7 +141,7 @@
         }
         h2 {
             font-size: 2.2em;
-            color: #1A2A6C;
+            color: var(--primary-blue);
             margin-bottom: 30px;
             position: relative;
             display: inline-block;
@@ -146,71 +154,107 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: #D4AF37;
+            background: var(--gold);
         }
         #whitepaper .btn {
-            background-color: #D4AF37;
-            color: #1A2A6C;
-            border: 2px solid #1A2A6C;
+            background-color: var(--gold);
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
         }
         #whitepaper .btn:hover {
-            background-color: #1A2A6C;
+            background-color: var(--primary-blue);
             color: white;
         }
         .roadmap-item {
             text-align: left;
             margin: 20px auto;
             max-width: 800px;
-            padding: 15px;
-            border-left: 4px solid #D4AF37;
-            background-color: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid var(--gold);
+            background-color: rgba(214, 175, 55, 0.08);
+            border-radius: 0 8px 8px 0;
+            transition: transform 0.3s;
         }
-        /* NEW: LP Lock Section Styles */
+        .roadmap-item:hover {
+            transform: translateX(5px);
+        }
+        /* Enhanced LP Lock Section */
         .lock-card {
             background: white;
             border-radius: 10px;
-            padding: 25px;
+            padding: 30px;
             max-width: 600px;
             margin: 0 auto;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-top: 5px solid #D4AF37;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--gold);
+            background: linear-gradient(to bottom, #FFFFFF 0%, #F5F9FF 100%);
         }
         .lock-stats {
             display: flex;
             justify-content: space-between;
-            margin: 20px 0;
+            margin: 25px 0;
+            flex-wrap: wrap;
         }
         .lock-stat {
             text-align: center;
             flex: 1;
+            min-width: 120px;
+            margin: 10px;
+            padding: 15px;
+            background: rgba(26, 42, 108, 0.05);
+            border-radius: 8px;
         }
         .lock-stat h3 {
-            color: #1A2A6C;
-            margin-bottom: 5px;
+            color: var(--primary-blue);
+            margin-bottom: 8px;
+            font-size: 1.1em;
         }
         .lock-stat p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: bold;
-            color: #D4AF37;
+            color: var(--gold);
+            margin: 0;
         }
         .verify-btn {
             display: inline-block;
-            background: #1A2A6C;
+            background: var(--primary-blue);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 15px;
+            margin-top: 20px;
             transition: all 0.3s;
+            border: 2px solid var(--gold);
         }
         .verify-btn:hover {
-            background: #D4AF37;
+            background: var(--gold);
+            color: var(--primary-blue);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        /* New: Animated checkmarks for roadmap */
+        .roadmap-item p::before {
+            content: "✓ ";
+            color: var(--gold);
+            font-weight: bold;
+        }
+        .roadmap-item:nth-child(2) p::before {
+            content: "↻ ";
+            color: var(--secondary-blue);
+        }
+        .roadmap-item:nth-child(3) p::before {
+            content: "↻ ";
+            color: var(--secondary-blue);
+        }
+        .roadmap-item:nth-child(4) p::before {
+            content: "↻ ";
+            color: var(--secondary-blue);
         }
     </style>
 </head>
 <body>
+    <!-- Header remains unchanged -->
     <header>
         <div class="logo-container">
             <img src="dogarcoin.png" alt="Dogar Coin Logo">
@@ -223,7 +267,7 @@
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#live-price">Live Price</a></li>
                 <li><a href="#whitepaper">Whitepaper</a></li>
-                <li><a href="#lplock">LP Lock</a></li> <!-- Added LP Lock to navigation -->
+                <li><a href="#lplock">LP Lock</a></li>
             </ul>
         </nav>
     </header>
@@ -237,36 +281,43 @@
     <section id="about">
         <h2>About Dogar Coin</h2>
         <p>Dogar Coin is a revolutionary cryptocurrency designed to benefit the community and its holders. Our mission is to create a decentralized, sustainable economy that empowers individuals worldwide through blockchain technology.</p>
+        <div style="max-width: 600px; margin: 30px auto;">
+            <div style="background: rgba(214, 175, 55, 0.1); padding: 20px; border-radius: 8px; border-left: 4px solid var(--gold);">
+                <p style="font-style: italic; margin: 0;">"Building trust through transparency and community-driven development."</p>
+            </div>
+        </div>
     </section>
 
     <section id="tokenomics">
         <h2>Tokenomics</h2>
-        <div class="roadmap-item">
+        <div class="roadmap-item" style="max-width: 600px;">
             <p><strong>Total Supply:</strong> 200 Billion DGC</p>
-            <p><strong>Rewards System:</strong> Community-focused with generous staking rewards.</p>
-            <p><strong>Distribution:</strong> Fair launch with transparent allocation.</p>
+            <p><strong>Rewards System:</strong> Community-focused with generous staking rewards</p>
+            <p><strong>Distribution:</strong> Fair launch with transparent allocation</p>
+            <p><strong>Liquidity:</strong> 84.8% locked for 1 year</p>
         </div>
     </section>
 
     <section id="roadmap">
         <h2>Roadmap</h2>
         <div class="roadmap-item">
-            <p>✅ <strong>Q1 2025</strong> - Official Coin Launch</p>
+            <p><strong>Q1 2025</strong> - Official Coin Launch</p>
         </div>
         <div class="roadmap-item">
-            <p>🔄 <strong>Q2 2025</strong> - Major Exchange Listings</p>
+            <p><strong>Q2 2025</strong> - Major Exchange Listings</p>
         </div>
         <div class="roadmap-item">
-            <p>🔄 <strong>Q3 2025</strong> - Staking Feature Implementation</p>
+            <p><strong>Q3 2025</strong> - Staking Feature Implementation</p>
         </div>
         <div class="roadmap-item">
-            <p>🔄 <strong>Q4 2025</strong> - Global Community Growth & Strategic Partnerships</p>
+            <p><strong>Q4 2025</strong> - Global Community Growth & Strategic Partnerships</p>
         </div>
     </section>
 
     <section id="live-price">
         <h2>Live Price</h2>
-        <p>Current Price: <span style="font-size: 1.5em; color: #D4AF37; font-weight: bold;">$0.00</span></p>
+        <p>Current Price: <span style="font-size: 1.5em; color: var(--gold); font-weight: bold;">$0.00</span></p>
+        <small style="color: var(--secondary-blue);">Powered by community-driven liquidity</small>
     </section>
 
     <section id="whitepaper">
@@ -275,12 +326,11 @@
         <a href="Dogar Coin Whitepaper .pdf" class="btn" download>Download Whitepaper</a>
     </section>
 
-    <!-- NEW: LP Lock Certificate Section -->
     <section id="lplock">
         <h2>Liquidity Lock Certificate</h2>
         <div class="lock-card">
-            <h3 style="color: #1A2A6C;">DGC/WBNB Liquidity Locked</h3>
-            <p style="color: #666;">We've secured our liquidity to ensure long-term stability and trust.</p>
+            <h3 style="color: var(--primary-blue);">DGC/WBNB Liquidity Locked</h3>
+            <p style="color: #666; margin-bottom: 10px;">We've secured our liquidity to ensure long-term stability and trust.</p>
             
             <div class="lock-stats">
                 <div class="lock-stat">
@@ -289,7 +339,7 @@
                 </div>
                 <div class="lock-stat">
                     <h3>Locked Amount</h3>
-                    <p>37,601.1931 LP</p>
+                    <p>37,601 LP</p>
                 </div>
                 <div class="lock-stat">
                     <h3>Unlock Time</h3>
@@ -297,13 +347,13 @@
                 </div>
             </div>
             
-            <p><strong>Locked via:</strong> Mudra Locker</p>
+            <p style="margin-top: 10px;"><strong>Locked via:</strong> Mudra Locker</p>
             <a href="https://mudra.website/?certificate=yes&type=0&lp=0x1058e6b281fdca13aed475a0cb900d9f83d9bbcd" class="verify-btn" target="_blank">Verify Lock Certificate</a>
         </div>
     </section>
 
     <footer>
-        <p>Join our growing community: <a href="https://twitter.com/dogarcoin" style="color: #D4AF37; font-weight: bold; text-decoration: none;">Follow us on Twitter</a> | <a href="https://t.me/Dogarcoin" style="color: #D4AF37; font-weight: bold; text-decoration: none;">Join our Telegram</a></p>
+        <p>Join our growing community: <a href="https://twitter.com/dogarcoin" style="color: var(--gold); font-weight: bold; text-decoration: none;">Follow us on Twitter</a> | <a href="https://t.me/Dogarcoin" style="color: var(--gold); font-weight: bold; text-decoration: none;">Join our Telegram</a></p>
         <p>&copy; 2025 Dogar Coin. All rights reserved.</p>
     </footer>
 </body>
