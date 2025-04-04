@@ -165,6 +165,49 @@
             border-left: 4px solid #D4AF37;
             background-color: #f8f9fa;
         }
+        /* NEW: LP Lock Section Styles */
+        .lock-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #D4AF37;
+        }
+        .lock-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .lock-stat {
+            text-align: center;
+            flex: 1;
+        }
+        .lock-stat h3 {
+            color: #1A2A6C;
+            margin-bottom: 5px;
+        }
+        .lock-stat p {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #D4AF37;
+        }
+        .verify-btn {
+            display: inline-block;
+            background: #1A2A6C;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .verify-btn:hover {
+            background: #D4AF37;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -180,6 +223,7 @@
                 <li><a href="#roadmap">Roadmap</a></li>
                 <li><a href="#live-price">Live Price</a></li>
                 <li><a href="#whitepaper">Whitepaper</a></li>
+                <li><a href="#lplock">LP Lock</a></li> <!-- Added LP Lock to navigation -->
             </ul>
         </nav>
     </header>
@@ -229,6 +273,33 @@
         <h2>Dogar Coin Whitepaper</h2>
         <p>Dogar Coin (DGC) is a community-driven cryptocurrency designed to empower individuals and foster decentralized financial systems. Read our full whitepaper to learn more about our mission, tokenomics, governance, technology, and roadmap.</p>
         <a href="Dogar Coin Whitepaper .pdf" class="btn" download>Download Whitepaper</a>
+    </section>
+
+    <!-- NEW: LP Lock Certificate Section -->
+    <section id="lplock">
+        <h2>Liquidity Lock Certificate</h2>
+        <div class="lock-card">
+            <h3 style="color: #1A2A6C;">DGC/WBNB Liquidity Locked</h3>
+            <p style="color: #666;">We've secured our liquidity to ensure long-term stability and trust.</p>
+            
+            <div class="lock-stats">
+                <div class="lock-stat">
+                    <h3>Locked Percentage</h3>
+                    <p>84.80%</p>
+                </div>
+                <div class="lock-stat">
+                    <h3>Locked Amount</h3>
+                    <p>37,601.1931 LP</p>
+                </div>
+                <div class="lock-stat">
+                    <h3>Unlock Time</h3>
+                    <p>1 Year</p>
+                </div>
+            </div>
+            
+            <p><strong>Locked via:</strong> Mudra Locker</p>
+            <a href="https://mudra.website/?certificate=yes&type=0&lp=0x1058e6b281fdca13aed475a0cb900d9f83d9bbcd" class="verify-btn" target="_blank">Verify Lock Certificate</a>
+        </div>
     </section>
 
     <footer>
