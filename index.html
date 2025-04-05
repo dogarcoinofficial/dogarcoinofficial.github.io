@@ -21,6 +21,8 @@
             --hot-pink: #FF00AA;
             --deep-space: #0A0E24;
             --pulse-glow: 0 0 15px var(--electric-blue);
+            --pancake-orange: #FF8B00;
+            --pancake-red: #FF2D00;
         }
         
         body {
@@ -97,7 +99,7 @@
             box-shadow: 0 5px 15px var(--hot-pink);
         }
         
-        /* Hero Section - Super Catchy */
+        /* Hero Section */
         .hero {
             background: url('https://assets.codepen.io/3364143/star-bg.jpg') center/cover;
             padding: 100px 20px;
@@ -130,7 +132,7 @@
             color: #DDD;
         }
         
-        /* Animated Button */
+        /* Buttons */
         .btn-explode {
             display: inline-block;
             background: linear-gradient(45deg, var(--hot-pink), var(--electric-blue));
@@ -140,7 +142,7 @@
             font-weight: bold;
             border-radius: 50px;
             text-decoration: none;
-            margin-top: 30px;
+            margin: 10px;
             position: relative;
             overflow: hidden;
             border: none;
@@ -157,12 +159,35 @@
             animation: explode 0.5s forwards;
         }
         
+        .buy-now-btn {
+            background: linear-gradient(45deg, var(--pancake-orange), var(--pancake-red));
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 10px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(255, 45, 0, 0.4);
+            transition: all 0.3s;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .buy-now-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 45, 0, 0.6);
+            background: linear-gradient(45deg, var(--pancake-red), var(--pancake-orange));
+        }
+        
         @keyframes explode {
             0% { box-shadow: 0 0 0 0 rgba(255, 0, 170, 0.7); }
             100% { box-shadow: 0 0 0 15px rgba(255, 0, 170, 0); }
         }
         
-        /* Content Sections - Holographic Cards */
+        /* Content Sections */
         section {
             padding: 80px 20px;
             max-width: 1200px;
@@ -212,7 +237,7 @@
             display: inline-block;
         }
         
-        /* Roadmap - Timeline with Animated Bullets */
+        /* Roadmap */
         .roadmap-item {
             position: relative;
             padding: 25px;
@@ -249,7 +274,7 @@
             box-shadow: 0 0 10px var(--hot-pink);
         }
         
-        /* LP Lock - Glowing Certificate */
+        /* LP Lock */
         .lock-card {
             background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
@@ -288,7 +313,7 @@
             100% { transform: rotate(30deg) translate(10%, 10%); }
         }
         
-        /* Footer - Animated Social Links */
+        /* Footer */
         footer {
             background: linear-gradient(to right, #0A0E24, #1A0A24);
             padding: 40px 20px;
@@ -316,7 +341,14 @@
             box-shadow: 0 5px 15px var(--hot-pink);
         }
         
-        /* Floating Coins Animation */
+        /* X/Twitter Logo */
+        .social-links a:first-child {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 1.7em;
+            line-height: 45px;
+        }
+        
+        /* Floating Coins */
         .floating-coins {
             position: absolute;
             width: 100%;
@@ -347,6 +379,7 @@
             .hero h2 { font-size: 2.5em; }
             nav ul li { margin: 5px; }
             nav ul li a { font-size: 14px; padding: 5px 10px; }
+            .btn-explode, .buy-now-btn { padding: 12px 25px; font-size: 1em; }
         }
     </style>
 </head>
@@ -373,7 +406,14 @@
     <section class="hero">
         <h2 class="animate__animated animate__fadeInDown">DOGAR COIN IS HERE!</h2>
         <p class="animate__animated animate__fadeIn animate__delay-1s">The most hyped community-driven cryptocurrency with locked liquidity and moon potential!</p>
-        <a href="https://t.me/Dogarcoin" class="btn-explode animate__animated animate__pulse animate__infinite" target="_blank">JOIN THE REVOLUTION</a>
+        <div style="margin-top: 30px;">
+            <a href="https://t.me/Dogarcoin" class="btn-explode animate__animated animate__pulse animate__infinite" target="_blank">JOIN THE REVOLUTION</a>
+            <a href="https://pancakeswap.finance/swap?outputCurrency=YOUR_DGC_CONTRACT_ADDRESS" 
+               class="buy-now-btn animate__animated animate__fadeIn animate__delay-1s" 
+               target="_blank">
+               🚀 BUY NOW ON PCS
+            </a>
+        </div>
     </section>
 
     <section id="about">
@@ -404,6 +444,16 @@
                 <p style="font-size: 1.5em; color: var(--neon-gold);">84.8%</p>
                 <p style="font-size: 0.9em;">For 1 year</p>
             </div>
+        </div>
+        
+        <!-- Second Buy Button -->
+        <div style="margin: 40px 0 0;">
+            <a href="https://pancakeswap.finance/swap?outputCurrency=YOUR_DGC_CONTRACT_ADDRESS" 
+               class="buy-now-btn" 
+               target="_blank">
+               💰 BUY $DGC NOW
+            </a>
+            <p style="margin-top: 10px; color: var(--electric-blue);">Low 5% tax | Slippage 6-7%</p>
         </div>
     </section>
 
@@ -460,9 +510,8 @@
 
     <footer>
         <div class="social-links">
-            <a href="https://twitter.com/dogarcoin" target="_blank" class="animate__animated animate__bounceIn">🐦</a>
+            <a href="https://twitter.com/dogarcoin" target="_blank" class="animate__animated animate__bounceIn">𝕏</a>
             <a href="https://t.me/Dogarcoin" target="_blank" class="animate__animated animate__bounceIn animate__delay-1s">📢</a>
-            <a href="#" class="animate__animated animate__bounceIn animate__delay-2s">📘</a>
         </div>
         <p style="margin-top: 30px; color: var(--electric-blue);">© 2025 DOGAR COIN | THE PEOPLE'S CRYPTO</p>
     </footer>
