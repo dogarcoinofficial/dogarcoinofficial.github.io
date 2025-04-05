@@ -36,6 +36,74 @@
                 radial-gradient(circle at 80% 70%, rgba(255, 0, 170, 0.15) 0%, transparent 25%);
         }
         
+        /* Pro Tip Banner */
+        .pro-tip-banner {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            animation: floatUpDown 3s ease-in-out infinite;
+            transform-origin: top right;
+        }
+
+        .pro-tip-content {
+            background: linear-gradient(45deg, #1A2A6C, #0F0524);
+            border: 1px solid var(--neon-gold);
+            border-radius: 30px;
+            padding: 10px 15px 10px 10px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .pro-tip-icon {
+            font-size: 1.3em;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        .pro-tip-text {
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--neon-gold);
+        }
+
+        .pro-tip-btn {
+            background: linear-gradient(45deg, var(--pancake-orange), var(--pancake-red));
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .pro-tip-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(255,45,0,0.6);
+        }
+
+        .pro-tip-close {
+            color: #aaa;
+            margin-right: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+
+        .pro-tip-close:hover {
+            color: var(--hot-pink);
+            transform: scale(1.2);
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
         /* Cosmic Header */
         header {
             background: linear-gradient(135deg, #0F0524 0%, var(--deep-space) 100%);
@@ -380,10 +448,38 @@
             nav ul li { margin: 5px; }
             nav ul li a { font-size: 14px; padding: 5px 10px; }
             .btn-explode, .buy-now-btn { padding: 12px 25px; font-size: 1em; }
+            .pro-tip-banner {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                width: calc(100% - 20px);
+            }
+            .pro-tip-content {
+                justify-content: center;
+                padding: 8px;
+            }
+            .pro-tip-text {
+                font-size: 0.8em;
+                margin-right: 5px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Pro Tip Banner -->
+    <div class="pro-tip-banner">
+        <div class="pro-tip-content">
+            <span class="pro-tip-close">&times;</span>
+            <span class="pro-tip-icon">💡</span>
+            <span class="pro-tip-text">BUY $DGC NOW! 5% tax only</span>
+            <a href="https://pancakeswap.finance/swap?outputCurrency=YOUR_DGC_CONTRACT_ADDRESS" 
+               class="pro-tip-btn" 
+               target="_blank">
+               🚀 Trade
+            </a>
+        </div>
+    </div>
+
     <!-- Floating Animated Coins -->
     <div class="floating-coins" id="floatingCoins"></div>
     
@@ -548,6 +644,12 @@
             }
         }
         
+        // Close Pro Tip Banner
+        document.querySelector('.pro-tip-close').addEventListener('click', function() {
+            document.querySelector('.pro-tip-banner').style.display = 'none';
+            // Optional: Set cookie to remember closed state
+        });
+
         // Initialize when page loads
         window.onload = function() {
             createCoins();
