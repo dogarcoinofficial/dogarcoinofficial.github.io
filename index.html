@@ -381,6 +381,42 @@
             100% { transform: rotate(30deg) translate(10%, 10%); }
         }
         
+        /* Team Section */
+        .team-member-card {
+            flex: 0 0 280px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--electric-blue);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .team-member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px var(--hot-pink);
+        }
+        
+        .team-photo-container {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(45deg, #0F0524, #1A0A24);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .team-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--neon-gold);
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         /* Footer */
         footer {
             background: linear-gradient(to right, #0A0E24, #1A0A24);
@@ -602,6 +638,50 @@
         <h2>WHITEPAPER</h2>
         <p style="max-width: 700px; margin: 0 auto 30px;">Read our comprehensive whitepaper to understand the full vision, technology, and future of Dogar Coin.</p>
         <a href="DogarCoin_Whitepaper.pdf" class="btn-explode" download>DOWNLOAD WHITEPAPER</a>
+    </section>
+
+    <!-- ======= New Team Section ======= -->
+    <section id="team" style="padding: 80px 20px; max-width: 1200px; margin: 40px auto; position: relative;">
+        <div style="position: relative; z-index: 2;">
+            <h2 style="font-family: 'Kanit', sans-serif; font-size: 3em; margin-bottom: 30px; background: linear-gradient(to right, var(--neon-gold), var(--electric-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">TEAM</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px; color: #DDD;">The visionary minds powering DogarCoin.</p>
+
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
+                <!-- Team Member Card -->
+                <div class="team-member-card">
+                    <div class="team-photo-container">
+                        <div class="team-photo">
+                            <span style="font-size: 3em;">👨💻</span> <!-- Replace with <img src="amjad-photo.jpg"> -->
+                        </div>
+                        <div style="position: absolute; bottom: 20px; right: 20px; background: var(--hot-pink); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <a href="https://linkedin.com/in/amjad-ali-dogar-2025111a0" target="_blank" style="color: white; text-decoration: none;">🔗</a>
+                        </div>
+                    </div>
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="margin: 0; color: var(--electric-blue); font-size: 1.4em;">Amjad Ali Dogar</h3>
+                        <p style="margin: 5px 0; color: var(--neon-gold);">Founder & Project Lead</p>
+                        <a href="mailto:amjad@dogarcoin.com" style="color: var(--hot-pink); text-decoration: none; font-size: 0.9em;">amjad@dogarcoin.com</a>
+                    </div>
+                </div>
+                
+                <!-- Duplicate this block for more team members -->
+            </div>
+
+            <!-- Email List -->
+            <div style="margin-top: 60px; background: rgba(0, 0, 0, 0.3); padding: 30px; border-radius: 10px; border: 1px solid var(--neon-gold);">
+                <h3 style="margin-top: 0; color: var(--electric-blue);">Contact Channels</h3>
+                <ul style="list-style: none; padding: 0; columns: 2; gap: 20px;">
+                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">📩 General:</span> <a href="mailto:info@dogarcoin.com" style="color: white;">info@dogarcoin.com</a></li>
+                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">🛟 Support:</span> <a href="mailto:support@dogarcoin.com" style="color: white;">support@dogarcoin.com</a></li>
+                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">🤝 Partnerships:</span> <a href="mailto:contact@dogarcoin.com" style="color: white;">contact@dogarcoin.com</a></li>
+                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">🔐 Admin:</span> <a href="mailto:admin@dogarcoin.com" style="color: white;">admin@dogarcoin.com</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Cosmic border effect -->
+        <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, var(--electric-blue), var(--hot-pink), var(--neon-gold)); z-index: -1; border-radius: 10px; animation: rainbow 8s linear infinite; background-size: 400% 400%;"></div>
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 14, 36, 0.9); z-index: -1; border-radius: 8px;"></div>
     </section>
 
     <footer>
