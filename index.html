@@ -250,6 +250,26 @@
             background: linear-gradient(45deg, var(--pancake-red), var(--pancake-orange));
         }
         
+        .bscscan-btn {
+            display: inline-block;
+            background: #1E2026;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 10px;
+            transition: all 0.3s;
+            border: 1px solid #3E4046;
+        }
+        
+        .bscscan-btn:hover {
+            background: #2E3036;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
         @keyframes explode {
             0% { box-shadow: 0 0 0 0 rgba(255, 0, 170, 0.7); }
             100% { box-shadow: 0 0 0 15px rgba(255, 0, 170, 0); }
@@ -303,6 +323,39 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
+        }
+        
+        /* Contract Address Box */
+        .contract-box {
+            background: rgba(0, 245, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            border: 1px solid var(--electric-blue);
+            text-align: center;
+        }
+        
+        .contract-box p {
+            margin: 0;
+            font-size: 1.1em;
+            word-break: break-all;
+        }
+        
+        .copy-btn {
+            background: var(--electric-blue);
+            color: var(--deep-space);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background: var(--neon-gold);
         }
         
         /* Roadmap */
@@ -397,26 +450,6 @@
             box-shadow: 0 10px 30px var(--hot-pink);
         }
         
-        .team-photo-container {
-            position: relative;
-            height: 200px;
-            background: linear-gradient(45deg, #0F0524, #1A0A24);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .team-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid var(--neon-gold);
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
         /* Footer */
         footer {
             background: linear-gradient(to right, #0A0E24, #1A0A24);
@@ -483,7 +516,7 @@
             .hero h2 { font-size: 2.5em; }
             nav ul li { margin: 5px; }
             nav ul li a { font-size: 14px; padding: 5px 10px; }
-            .btn-explode, .buy-now-btn { padding: 12px 25px; font-size: 1em; }
+            .btn-explode, .buy-now-btn, .bscscan-btn { padding: 12px 25px; font-size: 1em; }
             .pro-tip-banner {
                 top: 10px;
                 right: 10px;
@@ -497,6 +530,9 @@
             .pro-tip-text {
                 font-size: 0.8em;
                 margin-right: 5px;
+            }
+            .contract-box p {
+                font-size: 0.9em;
             }
         }
     </style>
@@ -538,13 +574,28 @@
     <section class="hero">
         <h2 class="animate__animated animate__fadeInDown">DOGAR COIN IS HERE!</h2>
         <p class="animate__animated animate__fadeIn animate__delay-1s">The most hyped community-driven cryptocurrency with locked liquidity and moon potential!</p>
-        <div style="margin-top: 30px;">
-            <a href="https://t.me/Dogarcoin" class="btn-explode animate__animated animate__pulse animate__infinite" target="_blank">JOIN THE REVOLUTION</a>
+        
+        <!-- Contract Address Box -->
+        <div class="contract-box animate__animated animate__fadeIn animate__delay-1s">
+            <p>
+                <strong>Contract:</strong> 
+                <span id="contractAddress">0xA55829b27C1A5547e14cD9C9fe184c3e5fe9fF5e</span>
+                <button onclick="copyContract()" class="copy-btn">Copy</button>
+            </p>
+        </div>
+        
+        <div style="margin-top: 20px;">
+            <a href="https://pancakeswap.finance/swap?outputCurrency=0xA55829b27C1A5547e14cD9C9fe184c3e5fe9fF5e&inputCurrency=BNB" 
+               class="btn-explode animate__animated animate__pulse animate__infinite" 
+               target="_blank">JOIN THE REVOLUTION</a>
+               
             <a href="https://pancakeswap.finance/swap?outputCurrency=0xA55829b27C1A5547e14cD9C9fe184c3e5fe9fF5e&inputCurrency=BNB" 
                class="buy-now-btn animate__animated animate__fadeIn animate__delay-1s" 
-               target="_blank">
-               🚀 BUY NOW ON PCS
-            </a>
+               target="_blank">🚀 BUY NOW ON PCS</a>
+               
+            <a href="https://bscscan.com/token/0xA55829b27C1A5547e14cD9C9fe184c3e5fe9fF5e" 
+               class="bscscan-btn animate__animated animate__fadeIn animate__delay-1s" 
+               target="_blank">🔍 View on BscScan</a>
         </div>
     </section>
 
@@ -584,6 +635,11 @@
                class="buy-now-btn" 
                target="_blank">
                💰 BUY $DGC NOW
+            </a>
+            <a href="https://bscscan.com/token/0xA55829b27C1A5547e14cD9C9fe184c3e5fe9fF5e" 
+               class="bscscan-btn" 
+               target="_blank">
+               📊 Token Analytics
             </a>
             <p style="margin-top: 10px; color: var(--electric-blue);">Low 5% tax | Slippage 6-7%</p>
         </div>
@@ -631,6 +687,7 @@
             </div>
             
             <a href="https://mudra.website/?certificate=yes&type=0&lp=0x1058e6b281fdca13aed475a0cb900d9f83d9bbcd" class="btn-explode" style="display: inline-block; margin-top: 20px;" target="_blank">VERIFY ON MUDRA</a>
+            <a href="https://bscscan.com/token/0xA55829b27C1A5547e14cD9C9fe184c3e5fe9fF5e" class="bscscan-btn" style="display: inline-block; margin-top: 20px; margin-left: 10px;" target="_blank">VIEW ON BscScan</a>
         </div>
     </section>
 
@@ -640,7 +697,7 @@
         <a href="DogarCoin_Whitepaper.pdf" class="btn-explode" download>DOWNLOAD WHITEPAPER</a>
     </section>
 
-    <!-- ======= New Team Section ======= -->
+    <!-- ======= Team Section ======= -->
     <section id="team" style="padding: 80px 20px; max-width: 1200px; margin: 40px auto; position: relative;">
         <div style="position: relative; z-index: 2;">
             <h2 style="font-family: 'Kanit', sans-serif; font-size: 3em; margin-bottom: 30px; background: linear-gradient(to right, var(--neon-gold), var(--electric-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">TEAM</h2>
@@ -667,6 +724,7 @@
                 </ul>
             </div>
         </div>
+        
         
         <!-- Cosmic border effect -->
         <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, var(--electric-blue), var(--hot-pink), var(--neon-gold)); z-index: -1; border-radius: 10px; animation: rainbow 8s linear infinite; background-size: 400% 400%;"></div>
