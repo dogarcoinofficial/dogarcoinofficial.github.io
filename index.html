@@ -694,7 +694,7 @@
     <section id="whitepaper">
         <h2>WHITEPAPER</h2>
         <p style="max-width: 700px; margin: 0 auto 30px;">Read our comprehensive whitepaper to understand the full vision, technology, and future of Dogar Coin.</p>
-        <a href="DogarCoin_Whitepaper.pdf" class="btn-explode" download>DOWNLOAD WHITEPAPER</a>
+        <a href="whitepaper.pdf" class="btn-explode" download>DOWNLOAD WHITEPAPER</a>
     </section>
 
     <!-- ======= Team Section ======= -->
@@ -771,6 +771,14 @@
             }
         }
         
+        // Copy contract address
+        function copyContract() {
+            const contractText = document.getElementById('contractAddress').textContent;
+            navigator.clipboard.writeText(contractText).then(() => {
+                alert('Contract address copied to clipboard!');
+            });
+        }
+
         // Close Pro Tip Banner
         document.querySelector('.pro-tip-close').addEventListener('click', function() {
             document.querySelector('.pro-tip-banner').style.display = 'none';
