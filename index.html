@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚀 Dogar Coin (DGC) | The People's Crypto</title>
+    <title>🚀 Dogar Coin (DGC) | Community-Powered Cryptocurrency</title>
     
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -270,6 +270,40 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         
+        /* New BURN Proof Section */
+        .burn-proof {
+            background: rgba(255, 0, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #FF0000;
+            margin: 20px auto;
+            max-width: 700px;
+            text-align: center;
+        }
+        
+        /* Exchange Badges */
+        .exchange-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .exchange-badge {
+            background: rgba(0, 245, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--electric-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .exchange-badge img {
+            height: 30px;
+        }
+        
         @keyframes explode {
             0% { box-shadow: 0 0 0 0 rgba(255, 0, 170, 0.7); }
             100% { box-shadow: 0 0 0 15px rgba(255, 0, 170, 0); }
@@ -450,6 +484,18 @@
             box-shadow: 0 10px 30px var(--hot-pink);
         }
         
+        /* Verification Badge */
+        .verification-badge {
+            display: inline-block;
+            background: rgba(0, 200, 0, 0.2);
+            color: #00FF00;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            margin-left: 10px;
+            border: 1px solid #00FF00;
+        }
+        
         /* Footer */
         footer {
             background: linear-gradient(to right, #0A0E24, #1A0A24);
@@ -584,6 +630,17 @@
             </p>
         </div>
         
+        <!-- NEW: Burn Proof Section -->
+        <div class="burn-proof animate__animated animate__fadeIn">
+            <h3 style="color: #FF0000; margin-top: 0;">🔥 TOKEN BURN PROOF</h3>
+            <p>10,000 DGC permanently burned to increase scarcity</p>
+            <a href="https://bscscan.com/tx/[REPLACE-WITH-YOUR-BURN-TX-HASH]" 
+               class="bscscan-btn" 
+               target="_blank">
+               📌 Verify Burn on BscScan
+            </a>
+        </div>
+        
         <div style="margin-top: 20px;">
             <a href="https://pancakeswap.finance/swap?outputCurrency=0xA55829b27C1A5547e14cD9C9fe184c3e5fe9fF5e&inputCurrency=BNB" 
                class="btn-explode animate__animated animate__pulse animate__infinite" 
@@ -604,10 +661,41 @@
         <div style="max-width: 800px; margin: 0 auto;">
             <p style="font-size: 1.2em; line-height: 1.6;">Dogar Coin (DGC) is <span style="color: var(--neon-gold);">THE NEXT BIG THING</span> in decentralized finance. We're building more than just a token - we're creating a movement where the community holds the power.</p>
             
+            <!-- NEW: Token Utility Section -->
+            <div class="roadmap-item" style="margin-top: 30px;">
+                <h3 style="color: var(--hot-pink);">💎 TOKEN UTILITY</h3>
+                <ul style="text-align: left;">
+                    <li>✔️ Low-fee P2P transactions</li>
+                    <li>✔️ Future governance voting</li>
+                    <li>✔️ Merchant payment integration</li>
+                    <li>✔️ Staking rewards (Coming Q3 2025)</li>
+                </ul>
+            </div>
+            
             <div class="roadmap-item" style="background: rgba(0, 245, 255, 0.1); margin-top: 40px;">
                 <p style="font-size: 1.1em;"><span style="color: var(--electric-blue);">✔️ 100% COMMUNITY OWNED</span> | <span style="color: var(--neon-gold);">✔️ NO DEV WALLETS</span> | <span style="color: var(--hot-pink);">✔️ LP LOCKED 1 YEAR</span></p>
             </div>
         </div>
+    </section>
+
+    <!-- NEW: Exchange Listings Section -->
+    <section id="listings">
+        <h2>EXCHANGE LISTINGS</h2>
+        <div class="exchange-badges">
+            <div class="exchange-badge">
+                <img src="https://cryptologos.cc/logos/pancakeswap-cake-logo.png" alt="PancakeSwap">
+                <span>LIVE</span>
+            </div>
+            <div class="exchange-badge">
+                <img src="https://cryptologos.cc/logos/coinmarketcap-cmc-logo.png" alt="CoinMarketCap">
+                <span>APPLIED</span>
+            </div>
+            <div class="exchange-badge">
+                <img src="https://cryptologos.cc/logos/coingecko-cgk-logo.png" alt="CoinGecko">
+                <span>APPLIED</span>
+            </div>
+        </div>
+        <p style="color: var(--electric-blue);">Tier 1 CEX listings coming after 10,000 holders!</p>
     </section>
 
     <section id="tokenomics">
@@ -697,34 +785,33 @@
         <a href="whitepaper.pdf" class="btn-explode" download>DOWNLOAD WHITEPAPER</a>
     </section>
 
-    <!-- ======= Team Section ======= -->
+    <!-- Team Section -->
     <section id="team" style="padding: 80px 20px; max-width: 1200px; margin: 40px auto; position: relative;">
         <div style="position: relative; z-index: 2;">
             <h2 style="font-family: 'Kanit', sans-serif; font-size: 3em; margin-bottom: 30px; background: linear-gradient(to right, var(--neon-gold), var(--electric-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">TEAM</h2>
             <p style="font-size: 1.2em; margin-bottom: 40px; color: #DDD;">The visionary minds powering DogarCoin.</p>
 
             <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
-                <!-- Team Member Card - Simplified without photo -->
+                <!-- Team Member Card -->
                 <div class="team-member-card" style="padding: 30px; text-align: center;">
-                    <h3 style="margin: 0; color: var(--electric-blue); font-size: 1.4em;">Amjad Ali Dogar</h3>
+                    <h3 style="margin: 0; color: var(--electric-blue); font-size: 1.4em;">Amjad Ali Dogar <span class="verification-badge">KYC Verified</span></h3>
                     <p style="margin: 10px 0; color: var(--neon-gold);">Founder & Project Lead</p>
                     <a href="mailto:amjad@dogarcoin.com" style="color: var(--hot-pink); text-decoration: none; font-size: 0.9em; display: block; margin-bottom: 15px;">amjad@dogarcoin.com</a>
                     <a href="https://linkedin.com/in/amjad-ali-dogar-2025111a0" target="_blank" style="color: white; text-decoration: none; background: var(--hot-pink); padding: 8px 15px; border-radius: 20px; display: inline-block;">LinkedIn Profile</a>
                 </div>
             </div>
 
-            <!-- Email List -->
+            <!-- NEW: Verification Section -->
             <div style="margin-top: 60px; background: rgba(0, 0, 0, 0.3); padding: 30px; border-radius: 10px; border: 1px solid var(--neon-gold);">
-                <h3 style="margin-top: 0; color: var(--electric-blue);">Contact Channels</h3>
+                <h3 style="margin-top: 0; color: var(--electric-blue);">PROJECT VERIFICATION</h3>
                 <ul style="list-style: none; padding: 0; columns: 2; gap: 20px;">
-                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">📩 General:</span> <a href="mailto:info@dogarcoin.com" style="color: white;">info@dogarcoin.com</a></li>
-                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">🛟 Support:</span> <a href="mailto:support@dogarcoin.com" style="color: white;">support@dogarcoin.com</a></li>
-                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">🤝 Partnerships:</span> <a href="mailto:contact@dogarcoin.com" style="color: white;">contact@dogarcoin.com</a></li>
-                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">🔐 Admin:</span> <a href="mailto:admin@dogarcoin.com" style="color: white;">admin@dogarcoin.com</a></li>
+                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">✅ Contract:</span> Verified</li>
+                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">✅ Ownership:</span> Will be renounced</li>
+                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">✅ Mint Function:</span> Disabled</li>
+                    <li style="margin-bottom: 10px;"><span style="color: var(--neon-gold);">✅ Honeypot:</span> No</li>
                 </ul>
             </div>
         </div>
-        
         
         <!-- Cosmic border effect -->
         <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, var(--electric-blue), var(--hot-pink), var(--neon-gold)); z-index: -1; border-radius: 10px; animation: rainbow 8s linear infinite; background-size: 400% 400%;"></div>
@@ -782,7 +869,6 @@
         // Close Pro Tip Banner
         document.querySelector('.pro-tip-close').addEventListener('click', function() {
             document.querySelector('.pro-tip-banner').style.display = 'none';
-            // Optional: Set cookie to remember closed state
         });
 
         // Initialize when page loads
